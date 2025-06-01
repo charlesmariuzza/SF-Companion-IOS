@@ -49,6 +49,11 @@ Want to get in touch or help out with the project? Join the Discord server:
 If you like the project, feel free to support me:  
 👉 [Buy me a coffee](https://buymeacoffee.com/demonkitty1337)
 
+## 🛡️ Disclaimer
+S&F Companion is an unofficial fan-made project and is not affiliated with, endorsed by, or sponsored by Playa Games GmbH or the official Shakes & Fidget team.
+All game names, trademarks, and assets are the property of their respective owners. This app does not contain any proprietary game data and does not interact with the game client or servers.
+The app is designed purely as a supportive tool to enhance the player experience through manual tracking, tips, and community-shared content.
+
 ## 📄 License
 
 Copyright © 2025 Charles Mariuzza. All Rights Reserved.
