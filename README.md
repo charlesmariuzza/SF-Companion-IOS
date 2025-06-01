@@ -1,8 +1,10 @@
-# S&F Companion (iOS)
+# S&F Companion (iOS) 
+
+<img src="https://github.com/user-attachments/assets/54b8c760-51f0-430e-8e92-8086b70cc1a6" alt="App Icon" width="250" height="250"/>
+
+## 
 
 **S&F Companion** is an iOS companion app for the popular RPG game *Shakes & Fidget*. Designed to enhance your in-game experience, it provides tools like multi-timer tracking, character progress management, and a full-featured wiki and guide system.
-
----
 
 ## 🧭 Features
 
@@ -21,16 +23,12 @@
 - 🔔 **Push Notifications**
   - Get notified when tasks reset or actions become available
 
----
-
 ## 📦 Tech Stack
 
 - Swift & SwiftUI
 - UserDefaults for local storage
 - UserNotifications for timer alerts
 - Firebase for error logging
-
----
 
 ## 🚧 Roadmap
 
@@ -41,21 +39,15 @@
 - [ ] Character stat tracking  
 - [ ] Localization  
 
----
-
 ## 📬 Contact
 
 Want to get in touch or help out with the project? Join the Discord server:  
 👉 [Discord](https://discord.gg/yp8TNGWGUr)
 
----
-
 ## ☕️ Support
 
 If you like the project, feel free to support me:  
 👉 [Buy me a coffee](https://buymeacoffee.com/demonkitty1337)
-
----
 
 ## 📄 License
 
