@@ -1,0 +1,24 @@
+//
+//  CharacterClass.swift
+//  SF Companion
+//
+//  Created by Chelsea Mariuzza on 09.06.25.
+//
+
+import Foundation
+
+enum CharacterClass: String, Identifiable, CaseIterable, Codable {
+    case warrior = "Krieger"
+    case mage = "Magier"
+    case scout = "Kundschafter"
+    case assassin = "Assassine"
+    case battlemage = "Kampfmagier"
+    case berserker = "Berserker"
+    case druid = "Druide"
+    case demonhunter = "Dämonenjäger"
+    case barde = "Barde"
+    case necromancer = "Nekromant"
+    case paladin = "Paladin"
+    
+    var id: CharacterClass { self }
+}

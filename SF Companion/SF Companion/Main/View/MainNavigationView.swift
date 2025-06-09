@@ -36,4 +36,5 @@ struct MainNavigationView: View {
 
 #Preview {
     MainNavigationView()
+        .modelContainer(for: Character.self, inMemory: true)
 }
