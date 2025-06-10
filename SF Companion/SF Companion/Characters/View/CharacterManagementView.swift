@@ -5,14 +5,17 @@
 //  Created by Chelsea Mariuzza on 09.06.25.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct CharacterManagementView: View {
-    
+
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Character.server, order: .forward)
     private var characterList: [Character]
+
+    // State to show sheet
+    @State var showAddSheet = false
 
     var body: some View {
         NavigationSplitView {
@@ -35,20 +38,19 @@ struct CharacterManagementView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button {
+                        showAddSheet.toggle()
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
             }
+            .sheet(isPresented: $showAddSheet) {
+                // Sheet where user can add new character to the list
+                AddCharacterSheet(showSheet: $showAddSheet)
+            }
         } detail: {
             Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newCharacter = Character(name: "Lyandara", server: "EU 17", characterClass: .paladin)
-            modelContext.insert(newCharacter)
         }
     }
 
