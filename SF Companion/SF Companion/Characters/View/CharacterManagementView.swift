@@ -21,14 +21,10 @@ struct CharacterManagementView: View {
         NavigationSplitView {
             List {
                 ForEach(characterList) { character in
-                    NavigationLink {
-                        Text("\(character.name)")
-                        Text("\(character.server)")
-                        Text("\(character.characterClass.rawValue)")
-                    } label: {
-                        Text("\(character.name)")
-                        Text("\(character.server)")
-                        Text("\(character.characterClass.rawValue)")
+                    NavigationLink(
+                        destination: CharacterDetailView(character: character)
+                    ) {
+                        CharacterRowView(character: character)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -47,7 +43,7 @@ struct CharacterManagementView: View {
             }
             .sheet(isPresented: $showAddSheet) {
                 // Sheet where user can add new character to the list
-                AddCharacterSheet(showSheet: $showAddSheet)
+                AddCharacterSheet()
             }
         } detail: {
             Text("Select an item")

@@ -17,7 +17,7 @@ struct AddCharacterSheet: View {
     @State var selectedClass: CharacterClass = .warrior
 
     // Needed to close sheet if new character was added
-    @Binding var showSheet: Bool
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
 
@@ -29,12 +29,21 @@ struct AddCharacterSheet: View {
                 Spacer()
             }.padding(.horizontal, 8)
 
-            Picker("Klasse auswählen", selection: $selectedClass) {
-                ForEach(CharacterClass.allCases) { characterClass in
-                    Text(characterClass.rawValue.capitalized)
+            HStack {
+                Picker("Klasse auswählen", selection: $selectedClass) {
+                    ForEach(CharacterClass.allCases) { characterClass in
+                        Text(characterClass.rawValue.capitalized)
+                    }
                 }
+                .pickerStyle(.menu)
+
+                Image(selectedClass.logoName)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .padding()
+
+                Spacer()
             }
-            .pickerStyle(WheelPickerStyle())
 
             TextField("Charaktername eingeben...", text: $characterName)
                 .padding(.horizontal, 8)
@@ -53,18 +62,22 @@ struct AddCharacterSheet: View {
                     )
                 )
 
-                showSheet = false
+                dismiss()
             }
             .buttonStyle(.borderedProminent)
-            .foregroundColor(.white)
+            .padding()
+            .foregroundStyle(.white)
         }
-        .toFullscreenSheet()
-        .presentationDetents([.large, .height(550)])
+        .foregroundStyle(.black)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.gray.opacity(0.3))
+        .presentationDetents([.medium, .height(350)])
     }
 }
 
 #Preview {
-    AddCharacterSheet(
-        showSheet: .constant(true)
-    ).modelContainer(for: Character.self, inMemory: true)
+    AddCharacterSheet().modelContainer(
+        for: Character.self,
+        inMemory: true
+    )
 }

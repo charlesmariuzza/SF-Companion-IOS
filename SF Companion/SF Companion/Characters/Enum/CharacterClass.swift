@@ -19,6 +19,33 @@ enum CharacterClass: String, Identifiable, CaseIterable, Codable {
     case barde = "Barde"
     case necromancer = "Nekromant"
     case paladin = "Paladin"
-    
+
     var id: CharacterClass { self }
+
+    var logoName: String {
+        switch self {
+        case .warrior:
+            return "warriorLogo"
+        case .mage:
+            return "mageLogo"
+        case .scout:
+            return "scoutLogo"
+        case .assassin:
+            return "assassinLogo"
+        case .battlemage:
+            return "battlemageLogo"
+        case .berserker:
+            return "berserkerLogo"
+        case .druid:
+            return "druidLogo"
+        case .demonhunter:
+            return "demonhunterLogo"
+        case .barde:
+            return "bardeLogo"
+        case .necromancer:
+            return "necromancerLogo"
+        case .paladin:
+            return "paladinLogo"
+        }
+    }
 }
