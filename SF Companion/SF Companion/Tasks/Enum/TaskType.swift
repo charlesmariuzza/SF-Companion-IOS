@@ -5,7 +5,7 @@
 //  Created by Chelsea Mariuzza on 27.07.25.
 //
 
-enum TaskType: String, CaseIterable {
+enum TaskType: String, CaseIterable, Codable {
     case adventure = "Abenteuer"
     case diceGame = "Würferspiel"
     case toilette = "Toilette"
@@ -13,7 +13,7 @@ enum TaskType: String, CaseIterable {
     case portal = "Portal"
     case dungeons = "Dungeon"
     case petsFeed = "Haustiere gefüttert"
-    case petsBattle = "Haustier Kämpfe "
+    case petsBattle = "Haustier Kämpfe"
     case wheel = "Glücksrad"
     case academy = "Akademie XP"
     case gemMine = "Mine"
@@ -21,7 +21,7 @@ enum TaskType: String, CaseIterable {
     case stein = "Stein"
     case soldiers = "Soldaten"
     case fortressBattle = "Festungskampf"
-    case soul = "Seelen"
+    case souls = "Seelen"
     case goldmine = "Goldmine"
     case underworldBattle = "Unterwelt Kampf"
     case arenaManagerSacrifice = "Arena Manager Opfern"
